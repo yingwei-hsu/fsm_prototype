@@ -29,7 +29,7 @@ sudo dnf install cmake ninja-build
 brew install cmake ninja
 ```
 
-**For Windows (using Chocolatey):**
+**For Windows (using Chocolatey):
 ```bash
 choco install cmake ninja
 ```
@@ -69,3 +69,11 @@ After a successful build, the following output can be expected:
 -   A build directory `build/Debug` will be created.
 -   The final executable will be `build/Debug/fsm_prototype.elf`.
 -   The build process will complete with no errors.
+
+## VSCode Setup
+
+For an optimal development experience with VSCode:
+
+1.  **Open the Workspace:** Open the `fsm_prototype.code-workspace` file in VSCode. This will set up the project correctly.
+2.  **Install CMake Tools Extension:** Install the official [CMake Tools](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cmake-tools) extension.
+3.  **Build:** Once the extension is installed and the workspace is open, you can configure and build the project directly from the VSCode command palette (Ctrl+Shift+P) by searching for "CMake: Configure" and "CMake: Build". The extension will automatically detect and use the defined CMake presets.
