@@ -23,7 +23,6 @@ set(MX_Include_Dirs
 
 # STM32CubeMX generated application sources
 set(MX_Application_Src
-    ${CMAKE_CURRENT_SOURCE_DIR}/../../Src/app_freertos.c
     ${CMAKE_CURRENT_SOURCE_DIR}/../../Src/stm32u5xx_it.c
     ${CMAKE_CURRENT_SOURCE_DIR}/../../Src/stm32u5xx_hal_msp.c
     ${CMAKE_CURRENT_SOURCE_DIR}/../../Src/sysmem.c
@@ -102,7 +101,7 @@ target_sources(${PROJECT_NAME} PRIVATE ${MX_Application_Src})
 target_link_directories(${PROJECT_NAME} PRIVATE ${MX_LINK_DIRS})
 
 # Add libraries to the project
-target_link_libraries(${PROJECT_NAME} ${MX_LINK_LIBS})
+target_link_libraries(${PROJECT_NAME} PUBLIC ${MX_LINK_LIBS})
 
 # Add the map file to the list of files to be removed with 'clean' target
 set_target_properties(${PROJECT_NAME} PROPERTIES ADDITIONAL_CLEAN_FILES ${PROJECT_NAME}.map)

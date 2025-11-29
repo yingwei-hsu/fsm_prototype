@@ -11,15 +11,30 @@ target_sources(fsm_prototype PRIVATE
     src/main.c
 )
 
+# Add STM32CubeMX generated sources and settings
+# We must specify a binary directory because the source is outside this directory's tree
+add_subdirectory(${CMAKE_SOURCE_DIR}/cmake/stm32cubemx ${CMAKE_CURRENT_BINARY_DIR}/stm32cubemx_build)
+
+# Add application modules
+add_subdirectory(${CMAKE_SOURCE_DIR}/application ${CMAKE_CURRENT_BINARY_DIR}/application_build)
+
+# Configure fsm_task library dependencies
+# It needs access to main.h from this project and BSP drivers
+target_include_directories(fsm_task PRIVATE
+    ${CMAKE_CURRENT_SOURCE_DIR}/include
+    ${CMAKE_SOURCE_DIR}/Drivers/BSP/STM32U5G9J-DK2
+)
+
 # Add include paths
 target_include_directories(fsm_prototype PRIVATE
     include
     ${CMAKE_SOURCE_DIR}/Drivers/BSP/STM32U5G9J-DK2
 )
 
-# Add STM32CubeMX generated sources and settings
-# We must specify a binary directory because the source is outside this directory's tree
-add_subdirectory(${CMAKE_SOURCE_DIR}/cmake/stm32cubemx ${CMAKE_CURRENT_BINARY_DIR}/stm32cubemx_build)
+# Link libraries
+target_link_libraries(fsm_prototype PRIVATE
+    fsm_task
+)
 
 # Remove wrong libob.a library dependency when using cpp files
 list(REMOVE_ITEM CMAKE_C_IMPLICIT_LINK_LIBRARIES ob)
