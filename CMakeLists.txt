@@ -26,4 +26,5 @@ enable_language(C ASM)
 set(CMAKE_EXPORT_COMPILE_COMMANDS TRUE)
 
 # Add projects
+add_subdirectory(platform)
 add_subdirectory(projects/fsm_prototype)

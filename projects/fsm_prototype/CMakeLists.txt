@@ -22,18 +22,17 @@ add_subdirectory(${CMAKE_SOURCE_DIR}/application ${CMAKE_CURRENT_BINARY_DIR}/app
 # It needs access to main.h from this project and BSP drivers
 target_include_directories(fsm_task PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/include
-    ${CMAKE_SOURCE_DIR}/platform/st/bsp/STM32U5G9J-DK2
 )
 
 # Add include paths
 target_include_directories(fsm_prototype PRIVATE
     include
-    ${CMAKE_SOURCE_DIR}/platform/st/bsp/STM32U5G9J-DK2
 )
 
 # Link libraries
 target_link_libraries(fsm_prototype PRIVATE
     fsm_task
+    platform_fsm_prototype
 )
 
 # Remove wrong libob.a library dependency when using cpp files

@@ -11,10 +11,6 @@ set(MX_Defines_Syms
 # STM32CubeMX generated include paths
 set(MX_Include_Dirs
     ${CMAKE_CURRENT_SOURCE_DIR}/../../Inc
-    ${CMAKE_CURRENT_SOURCE_DIR}/../../platform/st/bsp/STM32U5xx_HAL_Driver/Inc
-    ${CMAKE_CURRENT_SOURCE_DIR}/../../platform/st/bsp/STM32U5xx_HAL_Driver/Inc/Legacy
-    ${CMAKE_CURRENT_SOURCE_DIR}/../../Drivers/CMSIS/Device/ST/STM32U5xx/Include
-    ${CMAKE_CURRENT_SOURCE_DIR}/../../Drivers/CMSIS/Include
     ${CMAKE_CURRENT_SOURCE_DIR}/../../Middlewares/Third_Party/FreeRTOS/Source/include/
     ${CMAKE_CURRENT_SOURCE_DIR}/../../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM33_NTZ/non_secure/
     ${CMAKE_CURRENT_SOURCE_DIR}/../../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/
@@ -33,22 +29,6 @@ set(MX_Application_Src
 # STM32 HAL/LL Drivers
 set(STM32_Drivers_Src
     ${CMAKE_CURRENT_SOURCE_DIR}/../../Src/system_stm32u5xx.c
-    ${CMAKE_CURRENT_SOURCE_DIR}/../../platform/st/bsp/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_cortex.c
-    ${CMAKE_CURRENT_SOURCE_DIR}/../../platform/st/bsp/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_icache.c
-    ${CMAKE_CURRENT_SOURCE_DIR}/../../platform/st/bsp/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal.c
-    ${CMAKE_CURRENT_SOURCE_DIR}/../../platform/st/bsp/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_i2c.c
-    ${CMAKE_CURRENT_SOURCE_DIR}/../../platform/st/bsp/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_i2c_ex.c
-    ${CMAKE_CURRENT_SOURCE_DIR}/../../platform/st/bsp/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_rcc.c
-    ${CMAKE_CURRENT_SOURCE_DIR}/../../platform/st/bsp/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_rcc_ex.c
-    ${CMAKE_CURRENT_SOURCE_DIR}/../../platform/st/bsp/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_flash.c
-    ${CMAKE_CURRENT_SOURCE_DIR}/../../platform/st/bsp/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_flash_ex.c
-    ${CMAKE_CURRENT_SOURCE_DIR}/../../platform/st/bsp/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_gpio.c
-    ${CMAKE_CURRENT_SOURCE_DIR}/../../platform/st/bsp/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_dma.c
-    ${CMAKE_CURRENT_SOURCE_DIR}/../../platform/st/bsp/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_dma_ex.c
-    ${CMAKE_CURRENT_SOURCE_DIR}/../../platform/st/bsp/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_exti.c
-    ${CMAKE_CURRENT_SOURCE_DIR}/../../platform/st/bsp/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_pwr.c
-    ${CMAKE_CURRENT_SOURCE_DIR}/../../platform/st/bsp/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_pwr_ex.c
-    ${CMAKE_CURRENT_SOURCE_DIR}/../../platform/st/bsp/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_gtzc.c
 )
 
 # Drivers Midllewares
@@ -82,6 +62,11 @@ set(MX_LINK_LIBS
 add_library(stm32cubemx INTERFACE)
 target_include_directories(stm32cubemx INTERFACE ${MX_Include_Dirs})
 target_compile_definitions(stm32cubemx INTERFACE ${MX_Defines_Syms})
+
+# Link libraries
+target_link_libraries(stm32cubemx INTERFACE
+    platform_fsm_prototype
+)
 
 # Create STM32_Drivers static library
 add_library(STM32_Drivers OBJECT)

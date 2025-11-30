@@ -4,7 +4,11 @@
             "path": "."
         }
     ],
-    "settings": {},
+    "settings": {
+        "files.associations": {
+            "stm32u5g9j_discovery_bus.h": "c"
+        }
+    },
     "extensions": {
         "recommendations": [
             "ms-vscode.cmake-tools"
