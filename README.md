@@ -2,6 +2,13 @@
 
 This is a simple FSM (Finite State Machine) prototype project for an embedded system based on FreeRTOS and built with CMake.
 
+## Project Architecture
+
+This project uses a modular architecture:
+
+*   **`platform/`**: Contains the hardware-specific code (HAL, BSP, CMSIS) built as a static library (`platform_fsm_prototype`). This library provides a consistent interface for the application.
+*   **`projects/fsm_prototype/`**: Contains the main application logic (the FSM and FreeRTOS tasks). This application links against the `platform_fsm_prototype` library.
+
 ## Prerequisites
 
 To build this project, you will need the following tools installed on your system:

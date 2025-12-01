@@ -4,9 +4,12 @@ This is an embedded C project demonstrating a Finite State Machine (FSM) for the
 
 ## Project Structure
 
-*   `Src/`: Main application source code.
-*   `Inc/`: Main application header files.
-*   `Drivers/`: STM32 hardware drivers (HAL, BSP) and CMSIS.
+*   `projects/fsm_prototype/`: Main application source code (`src/`, `include/`).
+*   `platform/`: Platform-specific code, built as a static library (`platform_fsm_prototype`).
+    *   `platform/arm/CMSIS/`: ARM CMSIS headers (Core and Device).
+    *   `platform/st/bsp/`: STMicroelectronics BSP and HAL drivers.
+    *   `platform/hal/`: Generic hardware abstraction layer components.
+*   `Drivers/`: Legacy location for drivers (BSP components).
 *   `Middlewares/`: Third-party software components, including FreeRTOS.
 *   `cmake/`: CMake helper scripts for the build system.
 *   `tools/`: Contains the pre-built ARM GCC toolchain used for compilation.
@@ -14,6 +17,12 @@ This is an embedded C project demonstrating a Finite State Machine (FSM) for the
 *   `CMakeLists.txt`: The main CMake build script for the project.
 *   `.gitignore`: Specifies files and directories to be ignored by Git (e.g., `build/`).
 *   `fsm_prototype.code-workspace`: VSCode workspace file for this project.
+
+## Architecture
+
+The project is structured into two main parts:
+1.  **Platform Library (`platform/`)**: A static library (`platform_fsm_prototype`) containing the hardware abstraction layer (HAL), Board Support Package (BSP), and CMSIS headers. This encapsulates the hardware dependencies.
+2.  **Application (`projects/fsm_prototype/`)**: The main application code, which links against the platform library.
 
 ## Core Technologies
 
