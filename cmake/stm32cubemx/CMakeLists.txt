@@ -11,9 +11,9 @@ set(MX_Defines_Syms
 # STM32CubeMX generated include paths
 set(MX_Include_Dirs
     ${CMAKE_CURRENT_SOURCE_DIR}/../../Inc
-    ${CMAKE_CURRENT_SOURCE_DIR}/../../Middlewares/Third_Party/FreeRTOS/Source/include/
-    ${CMAKE_CURRENT_SOURCE_DIR}/../../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM33_NTZ/non_secure/
-    ${CMAKE_CURRENT_SOURCE_DIR}/../../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/
+    ${CMAKE_CURRENT_SOURCE_DIR}/../../platform/os/FreeRTOS/Source/include/
+    ${CMAKE_CURRENT_SOURCE_DIR}/../../platform/os/FreeRTOS/Source/portable/GCC/ARM_CM33_NTZ/non_secure/
+    ${CMAKE_CURRENT_SOURCE_DIR}/../../platform/os/FreeRTOS/Source/CMSIS_RTOS_V2/
     ${CMAKE_CURRENT_SOURCE_DIR}/../../platform/arm/os/CMSIS/RTOS2/Include/
 )
 
@@ -35,17 +35,17 @@ set(STM32_Drivers_Src
 
 
 set(RTOS2_Src
-    ${CMAKE_CURRENT_SOURCE_DIR}/../../Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_2.c
-    ${CMAKE_CURRENT_SOURCE_DIR}/../../Middlewares/Third_Party/FreeRTOS/Source/croutine.c
-    ${CMAKE_CURRENT_SOURCE_DIR}/../../Middlewares/Third_Party/FreeRTOS/Source/event_groups.c
-    ${CMAKE_CURRENT_SOURCE_DIR}/../../Middlewares/Third_Party/FreeRTOS/Source/list.c
-    ${CMAKE_CURRENT_SOURCE_DIR}/../../Middlewares/Third_Party/FreeRTOS/Source/queue.c
-    ${CMAKE_CURRENT_SOURCE_DIR}/../../Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c
-    ${CMAKE_CURRENT_SOURCE_DIR}/../../Middlewares/Third_Party/FreeRTOS/Source/tasks.c
-    ${CMAKE_CURRENT_SOURCE_DIR}/../../Middlewares/Third_Party/FreeRTOS/Source/timers.c
-    ${CMAKE_CURRENT_SOURCE_DIR}/../../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM33_NTZ/non_secure/port.c
-    ${CMAKE_CURRENT_SOURCE_DIR}/../../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM33_NTZ/non_secure/portasm.c
-    ${CMAKE_CURRENT_SOURCE_DIR}/../../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/../../platform/os/FreeRTOS/Source/portable/MemMang/heap_2.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/../../platform/os/FreeRTOS/Source/croutine.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/../../platform/os/FreeRTOS/Source/event_groups.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/../../platform/os/FreeRTOS/Source/list.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/../../platform/os/FreeRTOS/Source/queue.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/../../platform/os/FreeRTOS/Source/stream_buffer.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/../../platform/os/FreeRTOS/Source/tasks.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/../../platform/os/FreeRTOS/Source/timers.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/../../platform/os/FreeRTOS/Source/portable/GCC/ARM_CM33_NTZ/non_secure/port.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/../../platform/os/FreeRTOS/Source/portable/GCC/ARM_CM33_NTZ/non_secure/portasm.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/../../platform/os/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c
 )
 
 # Link directories setup

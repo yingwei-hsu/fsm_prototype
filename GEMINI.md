@@ -8,6 +8,7 @@ This is an embedded C project demonstrating a Finite State Machine (FSM) for the
 *   `platform/`: Platform-specific code, built as a static library (`platform_fsm_prototype`).
     *   `platform/arm/bsp/CMSIS/`: ARM CMSIS headers (Core and Device).
     *   `platform/arm/os/CMSIS/`: ARM CMSIS RTOS2 headers.
+    *   `platform/os/FreeRTOS/`: FreeRTOS source code.
     *   `platform/st/bsp/`: STMicroelectronics BSP and HAL drivers.
     *   `platform/hal/`: Generic hardware abstraction layer components.
     *   `platform/goodix/`: Goodix component drivers.
@@ -17,7 +18,6 @@ This is an embedded C project demonstrating a Finite State Machine (FSM) for the
     *   `platform/rocktech/`: Rocktech component drivers.
         *   `platform/rocktech/lcd/rk050hr18/`: RK050HR18 LCD driver.
 *   `Drivers/`: Legacy location for drivers (BSP components).
-*   `Middlewares/`: Third-party software components, including FreeRTOS.
 *   `cmake/`: CMake helper scripts for the build system.
 *   `tools/`: Contains the pre-built ARM GCC toolchain used for compilation.
 *   `fsm_prototype.ioc`: STM32CubeMX project file for hardware configuration.

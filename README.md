@@ -9,6 +9,7 @@ This project uses a modular architecture:
 *   **`platform/`**: Contains the hardware-specific code built as a static library (`platform_fsm_prototype`). This library provides a consistent interface for the application.
     *   `arm/bsp/`: ARM CMSIS headers (Core and Device).
     *   `arm/os/`: ARM CMSIS RTOS2 headers.
+    *   `os/`: FreeRTOS source code.
     *   `st/bsp/`: STMicroelectronics BSP and HAL drivers.
     *   `hal/`: Generic hardware abstraction layer components.
 *   **`projects/fsm_prototype/`**: Contains the main application logic (the FSM and FreeRTOS tasks). This application links against the `platform_fsm_prototype` library.
