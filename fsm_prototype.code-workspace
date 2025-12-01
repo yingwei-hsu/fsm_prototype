@@ -6,7 +6,8 @@
     ],
     "settings": {
         "files.associations": {
-            "stm32u5g9j_discovery_bus.h": "c"
+            "stm32u5g9j_discovery_bus.h": "c",
+            "cstdint": "c"
         }
     },
     "extensions": {

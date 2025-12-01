@@ -28,6 +28,7 @@ target_include_directories(${LIB_NAME} PUBLIC
     ${CMAKE_SOURCE_DIR}/platform/arm/CMSIS/Device/ST/STM32U5xx/Include
     ${CMAKE_SOURCE_DIR}/platform/arm/CMSIS/Include
     ${CMAKE_SOURCE_DIR}/platform/hal/Common
+    ${CMAKE_SOURCE_DIR}/platform/hal/goodix/gt911
     ${CMAKE_SOURCE_DIR}/Drivers/BSP
 )
 
