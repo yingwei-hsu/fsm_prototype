@@ -6,7 +6,10 @@ This is a simple FSM (Finite State Machine) prototype project for an embedded sy
 
 This project uses a modular architecture:
 
-*   **`platform/`**: Contains the hardware-specific code (HAL, BSP, CMSIS) built as a static library (`platform_fsm_prototype`). This library provides a consistent interface for the application.
+*   **`platform/`**: Contains the hardware-specific code built as a static library (`platform_fsm_prototype`). This library provides a consistent interface for the application.
+    *   `arm/bsp/`: ARM CMSIS headers (Core and Device).
+    *   `st/bsp/`: STMicroelectronics BSP and HAL drivers.
+    *   `hal/`: Generic hardware abstraction layer components.
 *   **`projects/fsm_prototype/`**: Contains the main application logic (the FSM and FreeRTOS tasks). This application links against the `platform_fsm_prototype` library.
 
 ## Prerequisites
