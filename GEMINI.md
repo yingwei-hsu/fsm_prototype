@@ -7,6 +7,7 @@ This is an embedded C project demonstrating a Finite State Machine (FSM) for the
 *   `projects/fsm_prototype/`: Main application source code (`src/`, `include/`).
 *   `platform/`: Platform-specific code, built as a static library (`platform_fsm_prototype`).
     *   `platform/arm/bsp/CMSIS/`: ARM CMSIS headers (Core and Device).
+    *   `platform/arm/os/CMSIS/`: ARM CMSIS RTOS2 headers.
     *   `platform/st/bsp/`: STMicroelectronics BSP and HAL drivers.
     *   `platform/hal/`: Generic hardware abstraction layer components.
     *   `platform/goodix/`: Goodix component drivers.
