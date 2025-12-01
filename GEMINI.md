@@ -9,7 +9,8 @@ This is an embedded C project demonstrating a Finite State Machine (FSM) for the
     *   `platform/arm/CMSIS/`: ARM CMSIS headers (Core and Device).
     *   `platform/st/bsp/`: STMicroelectronics BSP and HAL drivers.
     *   `platform/hal/`: Generic hardware abstraction layer components.
-        *   `platform/hal/goodix/`: Goodix component drivers (e.g., GT911).
+        *   `platform/hal/goodix/`: Goodix component drivers.
+            *   `platform/hal/goodix/touch/gt911/`: GT911 touch controller driver.
 *   `Drivers/`: Legacy location for drivers (BSP components).
 *   `Middlewares/`: Third-party software components, including FreeRTOS.
 *   `cmake/`: CMake helper scripts for the build system.
