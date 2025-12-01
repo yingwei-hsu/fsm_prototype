@@ -18,7 +18,7 @@
 /* USER CODE END Header */
 
 /* Includes ------------------------------------------------------------------*/
-#include "main.h"
+#include "stm32u5xx_hal.h"
 #include "stm32u5xx_it.h"
 #include "FreeRTOS.h"
 #include "task.h"

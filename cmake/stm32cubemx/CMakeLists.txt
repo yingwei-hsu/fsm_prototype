@@ -10,7 +10,6 @@ set(MX_Defines_Syms
 
 # STM32CubeMX generated include paths
 set(MX_Include_Dirs
-    ${CMAKE_CURRENT_SOURCE_DIR}/../../Inc
     ${CMAKE_CURRENT_SOURCE_DIR}/../../platform/os/FreeRTOS/Source/include/
     ${CMAKE_CURRENT_SOURCE_DIR}/../../platform/os/FreeRTOS/Source/portable/GCC/ARM_CM33_NTZ/non_secure/
     ${CMAKE_CURRENT_SOURCE_DIR}/../../platform/os/FreeRTOS/Source/CMSIS_RTOS_V2/
@@ -20,59 +19,89 @@ set(MX_Include_Dirs
 
 # STM32CubeMX generated application sources
 set(MX_Application_Src
-    ${CMAKE_CURRENT_SOURCE_DIR}/../../Src/stm32u5xx_it.c
-    ${CMAKE_CURRENT_SOURCE_DIR}/../../Src/stm32u5xx_hal_msp.c
-    ${CMAKE_CURRENT_SOURCE_DIR}/../../Src/sysmem.c
-    ${CMAKE_CURRENT_SOURCE_DIR}/../../Src/syscalls.c
     ${CMAKE_CURRENT_SOURCE_DIR}/../../startup_stm32u5g9xx.s
 )
 
 # STM32 HAL/LL Drivers
+
 set(STM32_Drivers_Src
-    ${CMAKE_CURRENT_SOURCE_DIR}/../../Src/system_stm32u5xx.c
+
 )
+
+
 
 # Drivers Midllewares
 
 
+
+
+
 set(RTOS2_Src
+
     ${CMAKE_CURRENT_SOURCE_DIR}/../../platform/os/FreeRTOS/Source/portable/MemMang/heap_2.c
+
     ${CMAKE_CURRENT_SOURCE_DIR}/../../platform/os/FreeRTOS/Source/croutine.c
+
     ${CMAKE_CURRENT_SOURCE_DIR}/../../platform/os/FreeRTOS/Source/event_groups.c
+
     ${CMAKE_CURRENT_SOURCE_DIR}/../../platform/os/FreeRTOS/Source/list.c
+
     ${CMAKE_CURRENT_SOURCE_DIR}/../../platform/os/FreeRTOS/Source/queue.c
+
     ${CMAKE_CURRENT_SOURCE_DIR}/../../platform/os/FreeRTOS/Source/stream_buffer.c
+
     ${CMAKE_CURRENT_SOURCE_DIR}/../../platform/os/FreeRTOS/Source/tasks.c
+
     ${CMAKE_CURRENT_SOURCE_DIR}/../../platform/os/FreeRTOS/Source/timers.c
+
     ${CMAKE_CURRENT_SOURCE_DIR}/../../platform/os/FreeRTOS/Source/portable/GCC/ARM_CM33_NTZ/non_secure/port.c
+
     ${CMAKE_CURRENT_SOURCE_DIR}/../../platform/os/FreeRTOS/Source/portable/GCC/ARM_CM33_NTZ/non_secure/portasm.c
+
     ${CMAKE_CURRENT_SOURCE_DIR}/../../platform/os/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c
+
 )
+
+
 
 # Link directories setup
+
 set(MX_LINK_DIRS
 
+
+
 )
+
 # Project static libraries
+
 set(MX_LINK_LIBS 
-    STM32_Drivers
+
     ${TOOLCHAIN_LINK_LIBRARIES}
-    RTOS2	
+
+    RTOS2	
+
 )
+
 # Interface library for includes and symbols
+
 add_library(stm32cubemx INTERFACE)
+
 target_include_directories(stm32cubemx INTERFACE ${MX_Include_Dirs})
+
 target_compile_definitions(stm32cubemx INTERFACE ${MX_Defines_Syms})
 
+
+
 # Link libraries
+
 target_link_libraries(stm32cubemx INTERFACE
+
     platform_fsm_prototype
+
 )
 
-# Create STM32_Drivers static library
-add_library(STM32_Drivers OBJECT)
-target_sources(STM32_Drivers PRIVATE ${STM32_Drivers_Src})
-target_link_libraries(STM32_Drivers PUBLIC stm32cubemx)
+
+
 
 
 # Create RTOS2 static library
