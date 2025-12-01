@@ -13,6 +13,8 @@ This is an embedded C project demonstrating a Finite State Machine (FSM) for the
         *   `platform/goodix/touch/gt911/`: GT911 touch controller driver.
     *   `platform/mxic/`: MXIC component drivers.
         *   `platform/mxic/flash/mx66uw1g45g/`: MX66UW1G45G OctoSPI Flash driver.
+    *   `platform/rocktech/`: Rocktech component drivers.
+        *   `platform/rocktech/lcd/rk050hr18/`: RK050HR18 LCD driver.
 *   `Drivers/`: Legacy location for drivers (BSP components).
 *   `Middlewares/`: Third-party software components, including FreeRTOS.
 *   `cmake/`: CMake helper scripts for the build system.
