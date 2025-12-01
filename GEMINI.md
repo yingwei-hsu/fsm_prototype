@@ -9,6 +9,7 @@ This is an embedded C project demonstrating a Finite State Machine (FSM) for the
     *   `platform/arm/bsp/CMSIS/`: ARM CMSIS headers (Core and Device).
     *   `platform/arm/os/CMSIS/`: ARM CMSIS RTOS2 headers.
     *   `platform/os/FreeRTOS/`: FreeRTOS source code.
+        *   `platform/os/FreeRTOS/Config/`: FreeRTOS configuration file (`FreeRTOSConfig.h`).
     *   `platform/st/bsp/`: STMicroelectronics BSP and HAL drivers.
     *   `platform/hal/`: Generic hardware abstraction layer components.
     *   `platform/goodix/`: Goodix component drivers.
