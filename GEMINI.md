@@ -4,7 +4,10 @@ This is an embedded C project demonstrating a Finite State Machine (FSM) for the
 
 ## Project Structure
 
-*   `projects/fsm_prototype/`: Main application source code (`src/`, `include/`).
+*   `projects/fsm_prototype/`: Main application source code.
+    *   `src/`: Application source files (`main.c`).
+    *   `include/`: Application header files.
+    *   `startup_stm32u5g9xx.s`: Device startup file (Assembly).
 *   `platform/`: Platform-specific code, built as a static library (`platform_fsm_prototype`).
     *   `platform/arm/bsp/CMSIS/`: ARM CMSIS headers (Core and Device).
     *   `platform/arm/os/CMSIS/`: ARM CMSIS RTOS2 headers.
@@ -30,7 +33,7 @@ This is an embedded C project demonstrating a Finite State Machine (FSM) for the
 
 The project is structured into two main parts:
 1.  **Platform Library (`platform/`)**: A static library (`platform_fsm_prototype`) containing the hardware abstraction layer (HAL), Board Support Package (BSP), and CMSIS headers. This encapsulates the hardware dependencies.
-2.  **Application (`projects/fsm_prototype/`)**: The main application code, which links against the platform library.
+2.  **Application (`projects/fsm_prototype/`)**: The main application code, including the startup code (`startup_stm32u5g9xx.s`) and the FSM logic. It links against the platform library.
 
 ## Core Technologies
 
@@ -41,6 +44,7 @@ The project is structured into two main parts:
 *   **Hardware Abstraction Layer (HAL):** STM32Cube HAL
 *   **Build System:** CMake (using presets)
 *   **Version Control:** Git, with Git LFS for large file handling.
+*   **Connectivity:** UART1 enabled for communication.
 
 ## Development Environment Setup
 

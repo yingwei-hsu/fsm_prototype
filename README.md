@@ -12,7 +12,7 @@ This project uses a modular architecture:
     *   `os/`: FreeRTOS source code.
     *   `st/bsp/`: STMicroelectronics BSP and HAL drivers.
     *   `hal/`: Generic hardware abstraction layer components.
-*   **`projects/fsm_prototype/`**: Contains the main application logic (the FSM and FreeRTOS tasks). This application links against the `platform_fsm_prototype` library.
+*   **`projects/fsm_prototype/`**: Contains the main application logic (the FSM and FreeRTOS tasks) and the startup code (`startup_stm32u5g9xx.s`). This application links against the `platform_fsm_prototype` library.
 
 ## Prerequisites
 
