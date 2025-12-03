@@ -19,7 +19,7 @@ set(MX_Include_Dirs
 
 # STM32CubeMX generated application sources
 set(MX_Application_Src
-    ${CMAKE_CURRENT_SOURCE_DIR}/../../startup_stm32u5g9xx.s
+    ${CMAKE_CURRENT_SOURCE_DIR}/../../projects/fsm_prototype/startup_stm32u5g9xx.s
 )
 
 # STM32 HAL/LL Drivers
